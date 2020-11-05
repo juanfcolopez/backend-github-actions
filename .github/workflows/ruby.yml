@@ -47,7 +47,9 @@ jobs:
         ruby-version: 2.6
     - name: Install dependencies
       run: bundle install
-    - name: bin/rails db-migrate
-      run: bin/rails db:migrate RAILS_ENV=test
+    - name: Setup Database
+      run: |
+        bundle exec rails db:create
+        bundle exec rails db:schema:load
     - name: Run rspec
       run: bundle exec rspec
