@@ -1,0 +1,34 @@
+  [1m[35m (152.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (134.8ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/sign_up" for 127.0.0.1 at 2020-11-05 03:07:45 +0000
+Processing by Api::V1::RegistrationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"ejemplo@uc.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Juan"}}
+  [1m[36mUser Exists (138.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "Rir8mjlq-f2wHl0osA81BA"], ["LIMIT", 1]]
+  [1m[35m (149.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (133.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ejemplo@uc.cl"], ["LIMIT", 1]]
+  [1m[36mUser Exists (149.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Juan"], ["LIMIT", 1]]
+  [1m[36mUser Create (220.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "username", "created_at", "updated_at", "auth_token") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ejemplo@uc.cl"], ["encrypted_password", "$2a$04$rZa/sgXNDZeM4zbYXUrFhOG91TkqNRo4PkMfDQufnbTXN3ry0fJ7S"], ["username", "Juan"], ["created_at", "2020-11-05 03:07:47.033426"], ["updated_at", "2020-11-05 03:07:47.033426"], ["auth_token", "Rir8mjlq-f2wHl0osA81BA"]]
+  [1m[35m (143.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1566ms (Views: 2.8ms | ActiveRecord: 1401.9ms)
+  [1m[35m (170.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (305.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (135.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (305.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ejemplo@uc.cl"], ["LIMIT", 1]]
+  [1m[36mUser Exists (303.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (230.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (171.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (167.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (178.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ejemplo@uc.cl"], ["LIMIT", 1]]
+  [1m[36mUser Exists (370.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (166.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (169.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (170.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Juan"], ["LIMIT", 1]]
+  [1m[35m (170.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (141.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (297.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (325.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ejemplo@uc.cl"], ["LIMIT", 1]]
+  [1m[36mUser Exists (151.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (287.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (306.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (277.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Juan"], ["LIMIT", 1]]
+  [1m[35m (338.5ms)[0m  [1m[31mROLLBACK[0m

@@ -1,0 +1,4 @@
+DATABASE_NAME: 'arquidb'
+DATABASE_USER: 'arquiusername'
+DATABASE_PASSWORD: 'arquipassword'
+DATABASE_HOST: 'arquidb1.cj22sr3ktkxg.us-east-1.rds.amazonaws.com'
