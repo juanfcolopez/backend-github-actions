@@ -8,6 +8,9 @@
 - sudo docker-compose run app rails db:migrate
 - sudo docker-compose up
 
+
+
+
 ## Consideraciones generales
 
 - Pueden encontrar la API sin cache en https://arqui-example.tk/, y con cache en https://arqui-e1-with-cache.tk/
